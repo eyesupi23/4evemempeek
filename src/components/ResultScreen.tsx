@@ -30,7 +30,11 @@ export function ResultScreen({
 
   return (
     <div className="flex flex-1 flex-col gap-4">
-      {/* {verdict.kind === "perfect" && <div className="mt-0.5" />} */}
+            {verdict.kind === "perfect" ? (
+        <div className="mt-7" />
+      ) : (
+        <div className="mt-5" />
+      )}
       <VerdictCard verdict={verdict} />
       <dl className="flex justify-center gap-10 text-center text-sm text-sumi-soft mt-3">
         <div>
