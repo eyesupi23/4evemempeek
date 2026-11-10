@@ -24,14 +24,16 @@ export default function App() {
             ออกจากเกม
           </button>
         )}
-        <button
-          type="button"
-          onClick={toggleMute}
-          className="p-2 text-sm text-sumi-soft"
-          aria-pressed={muted}
-        >
-          {muted ? "เสียง: ปิด" : "เสียง: เปิด"}
-        </button>
+        {game.phase !== "result" && (
+          <button
+            type="button"
+            onClick={toggleMute}
+            className="p-2 text-sm text-sumi-soft"
+            aria-pressed={muted}
+          >
+            {muted ? "เสียง: ปิด" : "เสียง: เปิด"}
+          </button>
+        )}
       </div>
 
       {game.phase === "title" && (
