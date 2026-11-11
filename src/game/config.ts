@@ -13,7 +13,7 @@ export const DEFAULT_TIME_LIMIT = 15; // seconds
 export const SHUFFLE_QUESTIONS = true;
 
 /** Shuffle the 7 answer buttons each question (false = always the order in src/data/choices.ts) */
-export const SHUFFLE_CHOICES = true;
+export const SHUFFLE_CHOICES = false;
 
 /** Hold the "เริ่มเกม" button this long to open the secret result-shortcut panel */
 export const SECRET_HOLD_MS = 10_000;
