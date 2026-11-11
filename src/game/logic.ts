@@ -1,4 +1,4 @@
-import { MAX_TILES, TILE_COUNT } from "./config";
+import { MAX_TILES, SHUFFLE_CHOICES, TILE_COUNT } from "./config";
 import { CHOICES } from "../data/choices";
 import type { ChoiceId } from "../data/choices";
 import type { Question, RankEntry, Round, RoundResult } from "./types";
@@ -24,6 +24,7 @@ export function prepareRound(q: Question, prevChoiceOrder?: number[]): Round {
 /** Shuffle the 7 answer buttons, never repeating the previous question's order */
 function shuffleChoices(prev?: number[]): number[] {
   const all = CHOICES.map((_, i) => i);
+  if (!SHUFFLE_CHOICES) return all;
   let order = shuffle(all);
   while (prev && order.every((v, i) => v === prev[i])) order = shuffle(all);
   return order;
